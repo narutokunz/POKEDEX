@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pokémon Register</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="pokemon-bg pokemon-bg-blue">
+
+  <div class="auth-container">
+
+    
+
+    <div class="auth-box">
+      <h2 class="title" style="margin-top: 0;">Become a Pokémon Trainer</h2>
+
+      <form onsubmit="register(event)"> 
+        <input id="name" type="text" placeholder="Trainer Name" class="input" required>
+        <input id="email" type="email" placeholder="Email Address" class="input" required>
+        <input id="password" type="password" placeholder="Choose Password" class="input" required>
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+
+      <p style="text-align: center; margin-top: 15px; font-size: 14px;">
+        Already have an account? 
+        <a href="login.html" style="color: var(--blue); text-decoration: none;">Login</a>
+      </p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

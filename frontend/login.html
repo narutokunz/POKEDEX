@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trainer Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="pokemon-bg pokemon-bg-yellow">
+  
+  <div class="auth-box">
+    
+    <h2 class="title" style="margin-top: 0;">Trainer Login</h2>
+
+    <form onsubmit="login(event)">
+      <input id="email" type="email" placeholder="Email" class="input" required>
+      <input id="password" type="password" placeholder="Password" class="input" required>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <p style="text-align: center; margin-top: 15px; font-size: 14px;">
+        New Trainer? 
+        <a href="register.html" style="color: var(--blue); text-decoration: none;">Register</a>
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

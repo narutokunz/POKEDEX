@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pokédex Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for icons (Checkmark, Delete, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="pokedex-bg">
+
+  <!-- NAVIGATION BAR --> 
+  <header class="navbar">
+    <div class="nav-brand">
+      <i class="fas fa-paw"></i> Pokédex Habits
+    </div>
+    <nav>
+      <a href="dashboard.html" class="nav-link active">Dashboard</a>
+      <a href="#" onclick="logout()" class="nav-link logout-btn">Logout</a>
+    </nav>
+  </header>
+  
+  <main class="dashboard-grid">
+    
+    <!-- LEFT PANEL: Pokemon Card & Streak Reward -->
+    <section class="left-panel">
+      <h2 class="section-title">Your Companion</h2>
+      <div class="pokemon-card" id="pokemonCard">
+        Loading Pokémon...
+      </div>
+      <div id="streak-reward-message" class="streak-message">
+        Achieve a 5-day streak to reveal a new Pokémon!
+      </div>
+    </section>
+
+    <!-- CENTER PANEL: Habit Management (Add & List) -->
+    <section class="center-panel">
+      <h2 class="section-title">Manage Your Habits</h2>
+      
+      <!-- REMOVED: streakDangerWarning element -->
+      
+      <div class="add-section">
+        <input id="title" placeholder="New Habit Title" class="input">
+        <input id="description" placeholder="Description (Optional)" class="input">
+        <button onclick="addHabit()" class="btn btn-add">Add Habit</button>
+      </div>
+    
+      <div id="habitList" class="habit-list">
+        <!-- Habits will be inserted here by script.js -->
+      </div>
+    </section>
+
+    <!-- RIGHT PANEL: Calendar View & REMINDER -->
+    <section class="right-panel">
+      <h2 class="section-title">Completion Calendar</h2>
+      <div id="calendar" class="calendar-container">
+        <div class="calendar-header">
+          <button onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
+          <span id="currentMonthYear"></span>
+          <button onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+      </div>
+      
+      <!-- CALENDAR REMINDER ELEMENT -->
+      <div id="calendarReminder" class="calendar-reminder">
+        <!-- Reminder status will be inserted here by script.js -->
+      </div>
+
+      <p class="calendar-legend">
+        <span class="legend-item completed"></span> Completed
+        <span class="legend-item missed"></span> Missed
+        <span class="legend-item future"></span> Future
+      </p>
+      
+    </section>
+
+  </main>
+    <div id="editModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <h3>Edit Habit</h3>
+    <input id="editTitle" placeholder="Habit Title" class="input">
+    <input id="editDescription" placeholder="Description (Optional)" class="input">
+    <button onclick="saveHabitEdit()" class="btn btn-add">Save Changes</button>
+    <button onclick="closeEditModal()" class="btn btn-delete">Cancel</button>
+  </div>
+</div>
+
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
